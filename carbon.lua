@@ -4,7 +4,7 @@ local module = {}
 
 -- Main func, must be executed before using functions like safe_highlight
 
-function module.load()
+function module.loadLib()
     local fs = Instance.new("Folder")
     fs.Name = "CarbonLibrary"
     fs.Parent = game:WaitForChild("CoreGui")
