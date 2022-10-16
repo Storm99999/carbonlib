@@ -95,10 +95,10 @@ end
 function module.safe_highlight(part, name, r, g, b)
     local h = Instance.new("Highlight")
     h.Name = name
-    h.Parent = game:WaitForChild("CoreGui")["CarbonLibrary"]["Highlights"]
     h.AlwaysOnTop = true
-    h.Adornee = part
     h.FillColor = Color3.fromRGB(r,g,b)
+    h.Adornee = part
+    h.Parent = game:WaitForChild("CoreGui")["CarbonLibrary"]["Highlights"]
 end
 
 function module.unhighlight(x)
