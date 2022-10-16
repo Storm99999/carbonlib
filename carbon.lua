@@ -118,3 +118,5 @@ function module.protect_gui(x)
         print("[CarbonLib] protect_gui("..x..") failed: Not a gui [CarbonLib: NaG]" )
     end
 end
+
+return module
