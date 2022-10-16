@@ -95,7 +95,7 @@ end
 function module.safe_highlight(part, name, r, g, b)
     local h = Instance.new("Highlight")
     h.Name = name
-    h.AlwaysOnTop = true
+    h.DepthMode = "AlwaysOnTop"
     h.FillColor = Color3.fromRGB(r,g,b)
     h.Adornee = part
     h.Parent = game:WaitForChild("CoreGui")["CarbonLibrary"]["Highlights"]
