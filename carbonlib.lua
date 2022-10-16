@@ -21,7 +21,7 @@ function module.get_nearest(x)
 		if v ~= localplayer then
 			if v.Character and v.Character:FindFirstChild("Head") and v.Character.Humanoid.Health > 0 then --- Alive checks
                 if x then
-                    if v.Character.TeamColor ~= localplayer.TeamColor then
+                    if v.TeamColor ~= localplayer.TeamColor then
                         local magnitude = (v.Character.Head.Position - localplayer.Character.Head.Position).magnitude
                         if magnitude < dist then
                             dist = magnitude
