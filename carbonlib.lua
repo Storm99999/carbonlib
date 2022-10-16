@@ -69,10 +69,26 @@ function module.get_cframe(part, path, isplr)
     return cframe
 end
 
-function module.set_camera(x, y)
-    workspace.CurrentCamera.CFrame = CFrame.new(x,y)
+function module.set_camera(x)
+    workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, x)
 end
 
+function module.import_object(x, parent)
+    game:GetObjects(x)[1].Parent = parent
+end
+
+function module.move_to(x)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = x
+end
+
+function module.random_plr()
+    local num = math.random(1, #game.Players:GetChildren())
+    return game.Players:GetChildren()[num]
+end
+
+function module.get_health(plr)
+    return game.Players[plr].Character.Humanoid.Health
+end
 
 function module.set_gravity(x)
     workspace.Gravity = x
