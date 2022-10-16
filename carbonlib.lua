@@ -75,11 +75,7 @@ end
 
 
 function module.set_gravity(x)
-    if isnumber(x) then
-        workspace.Gravity = x
-    else
-        print("[CarbonLib] set_gravity("..x..") failed: Not a number [CarbonLib: NaN]" )
-    end
+    workspace.Gravity = x
 end
 
 function module.bind_function(x, callback)
