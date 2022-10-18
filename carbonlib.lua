@@ -13,6 +13,17 @@ function module.loadLib()
     hs.Parent = fs
 end
 
+function module.IsLoaded()
+   local exists = false
+   if game:WaitForChild("CoreGui"):FindFirstChild("CarbonLibrary") then
+		exists = true
+	else
+		exists = false
+	end
+	
+	return exists
+end
+
 function module.get_nearest(x)
     local dist = math.huge -- inf
     local target = nil --- Nil, no target yet.
