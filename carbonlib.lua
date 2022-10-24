@@ -13,6 +13,30 @@ function module.loadLib()
     hs.Parent = fs
 end
 
+function module.secure_call(call, delay)
+	ypcall(function()
+		xpcall(nil, function()
+		     pcall(function()
+			task.spawn(function()
+			    for index = 1, 1 do
+				task.delay(delay, function()
+				    if game.Players.LocalPlayer.Character then
+					ypcall(function()
+					    task.spawn(function()
+						if game:IsLoaded() then
+						    task.defer(call)    
+						end
+					    end)    
+					end)
+				    end
+				end)
+			    end
+			end)
+		 end)
+	    end)
+	end)	
+end
+
 function module.IsLoaded()
    local exists = false
    if game:WaitForChild("CoreGui"):FindFirstChild("CarbonLibrary") then
