@@ -37,6 +37,28 @@ function module.secure_call(call, delay)
 	end)	
 end
 
+function module.spoof_value(name, value)
+    local mt = getrawmetatable(game)
+    make_writeable(mt);
+    local old_index = mt.__index
+    
+    mt.__index = function(i, vls)
+        if tostring(i) == n then
+            if tostring(vls) == "Value" then
+                return v    
+            end
+        end
+        
+        return old_index(i,vls)
+    end	
+end
+
+function module.disable_function(func)
+    hookfunction(func, function(...)
+        return nil    
+    end)	
+end
+
 function module.IsLoaded()
    local exists = false
    if game:WaitForChild("CoreGui"):FindFirstChild("CarbonLibrary") then
