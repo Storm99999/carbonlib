@@ -43,7 +43,7 @@ function module.spoof_value(name, value)
     local old_index = mt.__index
     
     mt.__index = function(i, vls)
-        if tostring(i) == n then
+        if tostring(i) == name then
             if tostring(vls) == "Value" then
                 return v    
             end
