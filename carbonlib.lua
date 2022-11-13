@@ -45,7 +45,7 @@ function module.spoof_value(name, value)
     mt.__index = function(i, vls)
         if tostring(i) == name then
             if tostring(vls) == "Value" then
-                return v    
+                return value  
             end
         end
         
